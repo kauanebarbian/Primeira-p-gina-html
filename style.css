@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+}
+.d-flex{
+    display: flex;
+}
+.jcb{
+    justify-content: space-between;
+}
+.aling-item-center{
+    align-items: center;
+}
+.itens-navegacao-paginas{
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.itens-navegacao-paginas:hover:not(.nav-link-signin){
+    border-bottom: 2px solid;
+}
+.itens-navegacao-paginas.nav-link-signin:hover{
+    color: blue;
+}
+.nav-link-globo{
+    color: blue;
+}
+.nav-link-g1{
+    color: brown;
+}
+.nav-link-ge{
+    color: green;
+}
+.nav-link-gshow{
+    color: orange;
+}
+.nav-link-globoplay{
+    color: red;
+}
+.nav-link-cartola{
+    color: orangered;
+}
+.nav-link-sportv{
+    color: black;
+}
+.mr-20{
+    margin-right: 20px;
+}
+.icon-person{
+    padding-right: 4px;
+}
+.itens-caixa-verde{
+    padding: 12px;
+    height: 60px;
+    margin-top: 50px;
+    background-color: green;
+}
+.nav-link-menu{
+    color: white;
+}
+.container-mosaico-times{
+    position: absolute;
+    display: none;
+    width: 220px;
+    height: 280px;
+    background-color: white;
+    box-shadow: black 1px 1px 1px 1px;
+    border-radius: 8px;
+}
+.container-shield:hover .container-mosaico-times{
+    display: block;
+}

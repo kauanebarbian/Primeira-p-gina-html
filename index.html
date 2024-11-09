@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRASILEIRÃO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -7px;
+    margin-right: 72px;
+    margin-left: 72px;
+    list-style: none;
+}
+
+.container-top-left {
+    display: flex;
+    font-weight: 521;
+    align-items: center;
+    list-style: none;
+}
+
+.container-top-right {
+    display: flex;
+    font-weight: 521;
+    align-items: center;
+    list-style: none;
+}
+
+.button-login {
+    border: none;
+    background: none;
+    padding: 0px 24px;
+    cursor: pointer;
+}
+
+.button-login:hover {
+    color: rgb(30, 87, 229);
+}
+
+.button-login:hover svg {
+    fill: rgb(30, 87, 229);
+}
+
+.item {
+    margin: 3px;
+    font-size: 16px;
+}
+
+.globo-link {
+    padding: 12px 11px 12px 12px;
+    color: #0669DE;
+}
+
+.globo-link:hover {
+    border-bottom: 2px solid #0669DE;
+}
+
+.g1-link {
+    padding: 12px 11px;
+    color: #C4170C;
+}
+
+.g1-link:hover {
+    border-bottom: 2px solid #C4170C;
+}
+
+.ge-link {
+    padding: 12px 11px;
+    color: #06AA48;
+}
+
+.ge-link:hover {
+    border-bottom: 2px solid #06AA48;
+}
+
+.gshow-link {
+    padding: 12px 11px;
+    color: #FF6700;
+}
+
+.gshow-link:hover {
+    border-bottom: 2px solid #FF6700;
+}
+
+.globoplay-link {
+    padding: 12px 11px;
+    color: #FB0334;
+}
+
+.globoplay-link:hover {
+    border-bottom: 2px solid #FB0334;
+}
+
+.cartola-link {
+    padding: 12px 11px;
+    color: #E3672B;
+}
+
+.cartola-link:hover {
+    border-bottom: 2px solid #E3672B;
+}
+
+.sportv-link {
+    padding: 12px 11px;
+    color: #08053A;
+}
+
+.sportv-link:hover {
+    border-bottom: 2px solid #08053A;
+}
+
+.assineja-link {
+    padding: 0px 24px;
+    color: black;
+}
+
+.assineja-link:hover {
+    color: rgb(30, 87, 229);
+}
+
+.button-login {
+    padding: 0px 12px 0px 24px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 521;
+}
+
+.bg-green {
+    background-color: #06AA48;
+    height: 82px;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -6px;
+    padding: 0 72px;
+    color: white;
+}
+
+.bg-green a {
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+}
+
+.menu-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-button i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.menu-button svg {
+    padding: 0 5px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1b5e20;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-container button:hover {
+    background-color: #388e3c;
+}
+
+.sub-nav {
+    background-color: #06AA48;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    padding-left: 72px;
+}
+
+.sub-nav-left {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.sub-nav a {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.sub-nav a:hover {
+    color: #b9f6ca;
+}
+
+.sub-nav a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu-section {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    gap: 30px;
+}
+
+.brasileirao-title {
+    padding-left: 395px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    flex: 1;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.list-components {
+    padding: 40px;
+    padding-left: 40px;
+    padding-right: 20px;
+    border-radius: 10px;
+    flex-basis: 48%;
+}
+
+.table-components {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.table-components th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.table-components td:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.thead-table-components {
+    color: #999999; 
+    border-top: 1px solid #9e9e9e ;
+}
+
+.thead-table-components th {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tbody-table-components td{
+    text-align: center;
+}
+
+.table-dados-time-td {  
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.table-posicao-td,
+.table-nome-td {
+    margin: 0;
+    padding: 0;
+}
+
+
+.jogo-svg {
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.tabela-text{
+    margin-left: 25px;
+    margin-top: 35px;
+}
+
+.teste{
+    margin-left: 40px;
+}
+
+.teste2{
+    margin-left: 670px;
+}
+.box {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 10px;    
+    border-bottom: 1px solid silver;  
+    border-radius: 8px;
+}
+
+.game-container {
+    padding: 5px;   
+    font-family: Arial, sans-serif;
+}
+
+.game-header {
+    color: #111;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.game-header h2 {
+    font-size: 24px;    
+}
+.game-round-div {
+    border-bottom: 1px solid silver;
+    border-top: 1px solid silver;
+    color: #111;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.game-round {
+    margin: 10px;
+    font-size: 16px;
+}
+
+.round-details {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.game-local {
+    text-align: center;
+    font-size: 13px;
+    padding: 0 5px;
+}
+.game-datetime {
+    text-align: center;
+    font-size: 13px;
+    padding: 0 5px;
+    font-weight: 700;
+}
+
+.match-up {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid silver;
+}
+
+.team-date {
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-size: 16px;
+    font-weight: 100;
+    height: 40px;
+    line-height: 16px;
+    vertical-align: middle;
+    width: 35%;
+}
+
+.team-logo {
+    height: 30px;
+    width: 30px;
+}
+
+.team-name-left {
+    text-align: right;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 24px;
+    width: 100%;
+}
+
+.team-name-right {
+    text-align: left;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 24px;
+    width: 100%;
+}
+
+.vs {
+    font-size: 16px;
+    color: #555;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.list-components {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.box {
+    width: 100%;
+    max-width: 1100px;
+}
+
+@media (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .list-components, .box {
+        width: 100%;
+        max-width: 1100px;
+        padding: 20px;
+    }
+
+    .search-container {
+        display: none; 
+    }
+
+    .shield-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-top {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .button-login, .assineja-link, .container-top-right {
+        display: none;
+    }
+
+    .container-top ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .bg-green {
+        height: 82px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-section {
+        width: auto;
+    }
+
+    .brasileirao-title {
+        font-size: 18px; 
+        padding-left: 0;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-components {
+        font-size: 14px;
+    }
+
+    .table-components th, .table-components td {
+        padding: 8px 4px;
+    }
+
+    .table-nome-td {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .match-up {
+        flex-direction: row;
+        padding: 10px 0;
+    }
+
+    .team-date {
+        width: 40%;
+    }
+
+    .team-name-left, .team-name-right {
+        font-size: 14px;
+    }
+
+    .game-datetime, .game-local {
+        font-size: 12px;
+    }
+
+    .shield-icon {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .match-up {
+        padding: 8px 0;
+    }
+
+    .team-logo {
+        display: none;
+    }
+
+    .game-round {
+        font-size: 14px;
+    }
+
+    .list-components, .box {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .main {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .list-components {
+        flex: 0 0 60%;
+    }
+
+    .box {
+        flex: 0 0 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .match-up {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; 
+    }
+
+    .team {
+        display: flex;
+        align-items: center;
+        flex-direction: row; 
+        gap: 5px;
+    }
+
+    .versus {
+        font-size: 16px; 
+        margin: 0 10px;
+    }
+
+    .team-logo {
+        max-width: 30px;
+        height: auto;
+    }
+
+    .team-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-logo {
+        max-width: 25px;
+    }
+
+    .team-name {
+        font-size: 12px;
+    }
+
+    .match-up {
+        gap: 5px; 
+    }
+
+    .versus {
+        font-size: 14px;
+    }
+}
+
+.team-logo {
+    display: inline-block; 
+}
+
+@media (max-width: 768px) {
+    .shield-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-green {
+        display: none; 
+    }
+}
+</style>
+
+<body>
+
+    <div class="container-top">
+        <div class="container-left">
+            <ul>
+                <li class="item"><a class="globo-link" href="#">globo.com</a></li>
+                <li class="item"><a class="g1-link" href="#">g1</a></li>
+                <li class="item"><a class="ge-link" href="#">ge</a></li>
+                <li class="item"><a class="gshow-link" href="#">gshow</a></li>
+                <li class="item"><a class="globoplay-link" href="#">globoplay</a></li>
+                <li class="item"><a class="cartola-link" href="#">cartola</a></li>
+                <li class="item"><a class="sportv-link" href="#">sportv</a></li>
+            </ul>
+        </div>
+
+        <div class="container-top-right">
+            <a class="assineja-link" href="#">Assine já</a>
+            <button class="button-login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" class="img">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                </svg>
+                Conta Globo
+            </button>
+        </div>
+    </div>
+    
+
+    <div class="bg-green">
+        <div class="menu-section">
+            <div class="menu-button">
+                <a href="#" class="menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
+                        <path d="M1.5 12a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                    MENU
+                </a>
+            </div>
+            <div class="shield-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-shield" viewBox="0 0 16 16">
+                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+                </svg>
+            </div>
+            <div class="brasileirao-title">BRASILEIRÃO SÉRIE A</div>
+        </div>
+
+        <div class="search-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" style="padding: 0 5px;">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+            <input type="text" placeholder="BUSCAR">
+            <button type="submit">Buscar</button>
+        </div>
+    </div>
+
+    <div class="sub-nav">
+        <div class="sub-nav-left">
+            <a href="">classificação</a>
+            <a href="">simulador</a>
+            <a href="">vídeos</a>
+            <a href="">seja pro</a>
+            <a href="">VAR</a>
+        </div>
+    </div>
+    <main class="main">
+            <div class="espaco-random">
+            </div>
+            <div class="list-components">
+                <header class="game-header">
+                    <h2>tabela</h2>
+                </header>
+                <table class="table-components"> 
+                    <thead class="thead-table-components">
+                        <tr>
+                            <th>Classificação</th>
+                            <th>P</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>E</th>
+                            <th>D</th>
+                            <th>GP</th>
+                            <th>GC</th>
+                            <th>SG</th>
+                            <th>%</th>
+                            <th>ULT.JOGOS</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody-table-components" id="tBodyGame"></tbody>
+                </table>
+            </div>
+            <div class="box">
+                <section class="game-container" id="sectionGame">
+                    <header class="game-header">
+                        <h2>Jogos</h2>
+                    </header>
+                </section >
+            </div>
+            <div class="arrow-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                  </svg>
+            </div>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        window.onload = function() {
+            $.ajax({
+                url: "https://api.api-futebol.com.br/v1/campeonatos/14/tabela",
+                headers: {"Authorization": "Bearer test_237b499e45ce9b81a45536dcf83cad"},
+                type: "GET",
+                success: function(data) {
+                    var tBody = document.getElementById("tBodyGame");
+                    for (var i = 0; i < data.length; i++) {
+                        var team = data[i];
+                        var ultimosJogos = team.ultimos_jogos;
+                        var jogosSVG = '';
+                        for (var j = 0; j < ultimosJogos.length; j++) {
+                            let color;
+                            if (ultimosJogos[j] === 'v') {
+                                color = 'green';
+                            } else if (ultimosJogos[j] === 'e') {
+                                color = 'gray';
+                            } else if (ultimosJogos[j] === 'd') {
+                                color = 'red';
+                            }
+                            jogosSVG += `<svg class='jogo-svg' xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 512 512' fill='${color}'><path d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z'/></svg>`;
+                        }
+                        var row = `<tr> 
+                                    <td>
+                                        <div class="table-dados-time-td">
+                                            <div class="table-posicao-td">${team.posicao}</div>
+                                            <div class="table-nome-td">${team.time.nome_popular}</div>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight: 700;">${team.pontos}</td>  
+                                    <td>${team.jogos}</td>
+                                    <td>${team.vitorias}</td>
+                                    <td>${team.empates}</td>
+                                    <td>${team.derrotas}</td>
+                                    <td>${team.gols_pro}</td>
+                                    <td>${team.gols_contra}</td>
+                                    <td>${team.saldo_gols}</td>
+                                    <td>${team.aproveitamento}</td>
+                                    <td>${jogosSVG}</td>
+                                </tr>`;
+                        tBody.innerHTML += row;
+                    }
+                },
+                error: function(error) {
+                    alert("Deu erro na requisição: " + error.toString());
+                }
+            });
+
+            $.ajax({
+    url: "https://api.api-futebol.com.br/v1/campeonatos/14/rodadas/1",
+    headers: {"Authorization": "Bearer test_237b499e45ce9b81a45536dcf83cad"},
+    type: "GET",
+    success: function(data) {
+        var round = data;
+        var section = document.getElementById("sectionGame");
+
+        for (var i = 0; i < round.partidas.length; i++) {
+            var partida = round.partidas[i];
+            
+            function obterDiaSemana(dateISO) {
+                var dataConvertida = new Date(dateISO);
+                var diasDaSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+                var Dia = diasDaSemana[dataConvertida.getDay()];
+                return Dia;
+            }
+
+            var result = obterDiaSemana(partida.data_realizacao_iso);
+
+            var row = `
+                <div class="game-round-div">
+                    <span class="game-round">${round.nome}</span>
+                </div>
+                <div class="round-details">
+                    <span class="game-local"> ${partida.estadio.nome_popular}</span>
+                    <span class="game-datetime">${partida.data_realizacao}</span>
+                    <span class="game-datetime">${result}</span>
+                    <span class="game-datetime">${partida.hora_realizacao}</span>
+                </div>
+                <div class="match-up">
+                    <div class="team-date">
+                        <span class="team-name-left">${partida.time_mandante.nome_popular}</span>
+                        <img src="${partida.time_mandante.escudo}" class="team-logo">
+                    </div>
+                    <div class="vs">
+                        <span></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="scoreboard-vs-icon" width="10px" height="10px" style="margin: 10px;">
+                            <line x1="-3" x2="100" y1="1" y2="100" stroke="#555" stroke-width="5"></line>
+                            <line x1="-3" x2="100" y1="100" y2="1" stroke="#555" stroke-width="5"></line>
+                        </svg>
+                        <span></span>
+                    </div>
+                    <div class="team-date">
+                        <img src="${partida.time_visitante.escudo}" class="team-logo">
+                        <span class="team-name-right">${partida.time_visitante.nome_popular}</span>
+                    </div>
+                </div>`;
+
+                    section.innerHTML += row;
+                }
+            },
+
+            error: function(error) {
+                alert("Deu erro na requisição: " + error.toString());
+            }
+        });
+
+        }
+    </script>
+    
+</body>
+</html>
